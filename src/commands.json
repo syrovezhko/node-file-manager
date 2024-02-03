@@ -15,5 +15,5 @@
   "os --architecture": "Operating system info: Get CPU architecture for which Node.js binary has compiled and print it to console",
   "hash": "<path_to_file> This command is make it possible to calculate hash for file and print it into console",
   "compress": "<path_to_file> <path_to_destination> This command is compress file",
-  "Decompress": "<path_to_file> <path_to_destination> This command is decompress file"
+  "decompress": "<path_to_file> <path_to_destination> This command is decompress file"
 }
