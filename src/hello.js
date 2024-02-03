@@ -35,6 +35,7 @@ function hello() {
 
   process.stdin.on("data", (input) => {
     const trimmedInput = input.toString("utf8").trim();
+    const command = trimmedInput.split(" ")[0];
     if (trimmedInput === ".exit") {
       handleExit(username);
     } else if (trimmedInput === "--help") {
@@ -49,7 +50,12 @@ function hello() {
         console.log(makeTextColor("_".repeat(100), "green"));
       }
     } else {
-      process.stdout.write(`Received input: ${trimmedInput}\n`);
+      console.log(
+        "There are not command like",
+      makeTextColor(command, "red", true),
+      "Check out",
+        makeTextColor("--help", "blue", true),
+      );
     }
     console.log("\nYou are currently in", __dirname, "\n");
   });
