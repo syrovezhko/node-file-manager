@@ -1,4 +1,5 @@
 import os from "os";
+import makeTextColor from "./makeTextColor.js";
 
 let __dirname = os.homedir();
 
@@ -25,6 +26,8 @@ function hello() {
         "\nYou are currently in",
         __dirname,
         "\n",
+        "\nIn order to get the list of commands write",
+        makeTextColor("--help", "blue", true),
       );
     }
   });
