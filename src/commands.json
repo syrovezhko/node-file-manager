@@ -1,5 +1,5 @@
 {
-  "help": "This command is prompt the user to view a list of commands",
+  "--help": "This command is prompt the user to view a list of commands",
   "up": "This command is make it possible to go upper from current directory",
   "cd": "<path_to_directory> This command is make it possible to go to dedicated folder from current directory (path_to_directory can be relative or absolute)",
   "cat": "<path_to_file> This command is make it possible to read file and print it's content in console",
