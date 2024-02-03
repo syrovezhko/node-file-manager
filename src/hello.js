@@ -1,3 +1,9 @@
+import { fileURLToPath } from "url";
+import path from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 function handleExit(username) {
   process.stdout.write(
     `\nThank you for using the file manager, ${username}, goodbye!\n`,
@@ -15,7 +21,13 @@ function hello() {
         .split(/[ _-]/g)
         .map((a) => a.charAt(0).toUpperCase() + a.slice(1))
         .join(" ");
-      console.log("Welcome to the File Manager,", username.concat("!"));
+      console.log(
+        "Welcome to the File Manager,",
+        username.concat("!"),
+        "\nYou are currently in",
+        __dirname,
+        "\n",
+      );
     }
   });
 
@@ -26,6 +38,7 @@ function hello() {
     } else {
       process.stdout.write(`Received input: ${trimmedInput}\n`);
     }
+    console.log("\nYou are currently in", __dirname, "\n");
   });
 
   ["SIGINT", "SIGTERM", "SIGQUIT"].forEach((signal) =>
