@@ -1,8 +1,6 @@
-import { fileURLToPath } from "url";
-import path from "path";
+import os from "os";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+let __dirname = os.homedir();
 
 function handleExit(username) {
   process.stdout.write(
