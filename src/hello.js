@@ -1,6 +1,7 @@
 import os from "os";
 import makeTextColor from "./makeTextColor.js";
 import commands from "./commands.json" with { type: "json" };
+import ls from "./ls.js";
 
 let __dirname = os.homedir();
 
@@ -33,7 +34,7 @@ function hello() {
     }
   });
 
-  process.stdin.on("data", (input) => {
+  process.stdin.on("data", async (input) => {
     const trimmedInput = input.toString("utf8").trim();
     const command = trimmedInput.split(" ")[0];
     if (trimmedInput === ".exit") {
@@ -49,11 +50,18 @@ function hello() {
         );
         console.log(makeTextColor("_".repeat(100), "green"));
       }
+    } else if (command in commands) {
+      switch (command) {
+        case "ls":
+          await ls(__dirname);
+          break;
+        default:
+      }
     } else {
       console.log(
         "There are not command like",
-      makeTextColor(command, "red", true),
-      "Check out",
+        makeTextColor(command, "red", true),
+        "Check out",
         makeTextColor("--help", "blue", true),
       );
     }
