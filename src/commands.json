@@ -1,0 +1,19 @@
+{
+  "help": "This command is prompt the user to view a list of commands",
+  "up": "This command is make it possible to go upper from current directory",
+  "cd": "<path_to_directory> This command is make it possible to go to dedicated folder from current directory (path_to_directory can be relative or absolute)",
+  "cat": "<path_to_file> This command is make it possible to read file and print it's content in console",
+  "add": "<new_file_name> This command is make it possible to create empty file in current working directory",
+  "rn": "<path_to_file> <new_filename> This command is make it possible to rename file",
+  "cp": "<path_to_file> <path_to_new_directory> This command is make it possible copy file",
+  "mv": "<path_to_file> <path_to_new_directory> This command is make it possible move file",
+  "rm": "<path_to_file> This command is make it possible remove file",
+  "os --EOL": "Operating system info: Get EOL and print it to console",
+  "os --cpus": "Operating system info: Get host machine CPUs info and print it to console",
+  "os --homedir": "Operating system info: Get home directory and print it to console",
+  "os --username": "Operating system info: Get current system user name and print it to console",
+  "os --architecture": "Operating system info: Get CPU architecture for which Node.js binary has compiled and print it to console",
+  "hash": "<path_to_file> This command is make it possible to calculate hash for file and print it into console",
+  "compress": "<path_to_file> <path_to_destination> This command is compress file",
+  "Decompress": "<path_to_file> <path_to_destination> This command is decompress file"
+}
