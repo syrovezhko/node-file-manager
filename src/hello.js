@@ -1,5 +1,6 @@
 import os from "os";
 import makeTextColor from "./makeTextColor.js";
+import commands from "./commands.json" with { type: "json" };
 
 let __dirname = os.homedir();
 
@@ -36,6 +37,17 @@ function hello() {
     const trimmedInput = input.toString("utf8").trim();
     if (trimmedInput === ".exit") {
       handleExit(username);
+    } else if (trimmedInput === "--help") {
+      for (let command in commands) {
+        console.log(
+          makeTextColor(command, "yellow"),
+          `${command} ${commands[command].replace(
+            /(?=[A-Z])/,
+            "\x1b[31m",
+          )}\x1b[0m`,
+        );
+        console.log(makeTextColor("_".repeat(100), "green"));
+      }
     } else {
       process.stdout.write(`Received input: ${trimmedInput}\n`);
     }
